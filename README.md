@@ -22,20 +22,39 @@ MCTS is a heuristic search algorithm used in decision processes, particularly in
 4. **Backpropagation:** Update the statistics of all nodes visited during the simulation, such as wins and total playouts.
 
 ## Installation
-To run the project, follow these steps:
+To run the project:
 
-Clone the repository to your local machine.
+1. Clone the repository and build it with Maven (JDK 18+ and Maven required; see `pom.xml`):
 
-Navigate to the project directory. `cd ConnectFour`
+   ```bash
+   git clone https://github.com/basupatil1213/TicTacToe-Connect4.git
+   cd TicTacToe-Connect4
+   mvn compile
+   ```
 
-Compile the Java files using the Java compiler.
+2. Run a game (MCTS player vs. random player):
 
-Run the main class to start the game.
-   
+   ```bash
+   # Tic-Tac-Toe
+   mvn exec:java -Dexec.mainClass=edu.neu.coe.info6205.mcts.tictactoe.TicTacToe
+   # Connect Four
+   mvn exec:java -Dexec.mainClass=edu.neu.coe.info6205.mcts.ConnectFour.ConnectFour
+   ```
+
+   Or run the `main` method of either class directly from your IDE.
 
 In our implementation, the MCTS algorithm is used to make intelligent moves in TicTacToe and ConnectFour games, competing against a random player.
 
 ## Test Cases
 Comprehensive test cases have been implemented for both TicTacToe and ConnectFour classes to ensure their correctness and functionality. The test cases cover various game scenarios, moves, and edge cases to validate the game logic and algorithms.
-# TicTacToe-Connect4
-# TicTacToe-Connect4
+
+Run the tests with:
+
+```bash
+mvn test
+```
+
+Test classes live under `src/test/java/edu/neu/coe/info6205/mcts/` (`tictactoe/`, `connectfour/`, `core/`).
+
+## Report
+The full project report is in [`Report_Final_Project_PSA.pdf`](Report_Final_Project_PSA.pdf).
